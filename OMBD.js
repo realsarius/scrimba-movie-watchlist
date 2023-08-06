@@ -14,7 +14,7 @@ export default class OMDB {
         <img class="posterImg" src=${this.getPoster(movie)} />
         <div id="movie">
           <div id="movieHeader">
-            <h2>${movie.Title}</h2>
+            <h2>${movie.Title} (${movie.Year})</h2>
             <div id="imdb">
               <img
                 src="assets/img/star.png"
