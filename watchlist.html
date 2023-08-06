@@ -11,35 +11,21 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" type="module" defer></script>
-    <title>Movie Watchlist</title>
+    <title>Watchlist</title>
   </head>
   <body>
     <div class="container">
       <div class="navContainer">
         <nav>
-          <h1 id="headerTitle">Find your film</h1>
+          <h1 id="headerTitle">My Watchlist</h1>
           <h2 id="headerLink">
-            <a class="link" href="watchlist.html">My Watchlist</a>
+            <a class="link" href="index.html">Search for movies</a>
           </h2>
         </nav>
       </div>
-      <div class="formContainer">
-        <form id="searchForm">
-          <img
-            src="./assets/img/search.svg"
-            alt="search-icon"
-            id="searchIcon"
-          />
-          <input
-            placeholder="Search for a movie"
-            type="text"
-            name="searchName"
-            id="searchName"
-          />
-          <button type="submit" id="searchBtn">Search</button>
-        </form>
-      </div>
-      <div id="movies"></div>
+      <div id="moviesWatchlist"></div>
     </div>
+
+    <form id="searchForm" style="display: none"></form>
   </body>
 </html>
