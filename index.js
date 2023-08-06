@@ -1,16 +1,16 @@
-import { searchMovie } from "./utils.js";
+import { searchMovie, addWatchlist, getMovies, getPromises } from "./utils.js";
 
 const searchForm = document.getElementById("searchForm");
 const searchName = document.getElementById("searchName");
 
 window.addEventListener("click", (e) => {
   if (e.target.id === "movieWatchlist") {
-    console.log(e.target.dataset.imdbid);
+    addWatchlist(e.target.dataset.imdbid);
   } else if (
     e.target.id === "movieWatchlistIcon" ||
     e.target.id === "movieWatchlistText"
   ) {
-    console.log(e.target.parentElement.dataset.imdbid);
+    addWatchlist(e.target.parentElement.dataset.imdbid);
   }
 });
 
@@ -19,3 +19,10 @@ searchForm.addEventListener("submit", (e) => {
 
   searchMovie(searchName.value);
 });
+
+if (document.title === "Watchlist") {
+  const watchlistMovies = JSON.parse(localStorage.getItem("watchlistMovies"));
+  const movies = getMovies(watchlistMovies);
+  getPromises(movies);
+  document.querySelector("#moviesWatchlist").innerHTML = "<p>addasdds</p>";
+}

@@ -5,10 +5,13 @@ export default class OMDB {
     return data;
   }
 
+  // rendering the movies
   getMovies(movieArr) {
+    if (document.title === "Movie Watchlist") {
+      document.querySelector("#movies").style.backgroundImage = "url()";
+    }
     let moviesHtml = "";
     movieArr.forEach((movie) => {
-      console.log(movie);
       moviesHtml += `
       <div id="movieContainer">
         <img class="posterImg" src=${this.getPoster(movie)} />
@@ -29,7 +32,7 @@ export default class OMDB {
             <div id="movieGenre">${this.getGenre(movie)}</div>
             <div data-imdbID="${movie.imdbID}" id="movieWatchlist">
               <img src="assets/img/watchlist.svg" alt="watchlist-add-icon" id="movieWatchlistIcon" />
-              <p id="movieWatchlistText">Watchlist</p>
+              <p id="movieWatchlistText">${this.watchlistOrHomePage()}</p>
             </div>
           </div>
           <div id="movieDescription">
@@ -43,6 +46,15 @@ export default class OMDB {
     return moviesHtml;
   }
 
+  watchlistOrHomePage() {
+    if (document.title === "Watchlist") {
+      return "Remove";
+    } else if (document.title === "Movie Watchlist") {
+      return "Watchlist";
+    }
+  }
+
+  // check if info is N/A and change it with something that makes sense
   getPoster(movie) {
     return movie.Poster === "N/A"
       ? "./assets/img/no-poster2.png"
