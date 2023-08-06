@@ -1,0 +1,233 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+  --search-text-color: #6b7280;
+}
+
+.container {
+  max-width: 550px;
+  width: 100%;
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navContainer {
+  background-image: url("./assets/img/nav-bg-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% 23.5%;
+  width: 100%;
+  height: 208px;
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: whitesmoke;
+}
+#headerTitle {
+  font-size: 2.5rem;
+}
+#headerLink a {
+  font-size: 1rem;
+  color: whitesmoke;
+  text-decoration: none;
+  position: relative;
+}
+#headerLink a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -4px;
+  left: 0;
+  background-color: #e7e7e7;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+#headerLink a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.formContainer {
+  width: 100%;
+  height: 37.5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchForm {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  width: 462px;
+  border: 1px #d1d5db solid;
+  position: absolute;
+  top: -20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+#searchForm input {
+  border: none;
+  padding: 0.5em 1em;
+  width: 100%;
+  height: 100%;
+  color: var(--search-text-color);
+  transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#searchForm input:focus {
+  outline: none;
+  background-color: #ebebeb;
+}
+
+#searchBtn {
+  height: 100%;
+  color: var(--search-text-color);
+  border: none;
+  border-left: #d1d5db 1px solid;
+  padding: 0 2em;
+  cursor: pointer;
+  background-color: #f9fafb;
+  transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#searchBtn:hover,
+#movieWatchlist:hover {
+  background-color: #e6e6e6;
+}
+
+#searchBtn:active,
+#movieWatchlist:active {
+  background-color: #c7c7c7;
+}
+
+#searchIcon {
+  width: 38px;
+  height: 38px;
+  fill: currentColor;
+  color: red;
+  background-color: white;
+  height: 100%;
+  border-left: 7.5px white solid;
+  border-right: 7.5px white solid;
+}
+
+#movies {
+  margin-top: 2.5em;
+}
+
+#movieContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5em;
+}
+
+#movie {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+}
+
+#movieHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  width: 100%;
+}
+#movieHeader h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+#movieHeader #imdbRating {
+  font-size: 14px;
+  height: 100%;
+}
+#imdb {
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
+}
+#imdbStar {
+  width: 22px;
+  height: 22px;
+}
+
+#movieInformation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+}
+.posterImg {
+  width: 150px;
+  border-radius: 0.25em;
+}
+
+#movieWatchlist {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+  transition: background-color 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#movieDescriptionText {
+  font-size: 14px;
+  color: #6b7280;
+}
+hr {
+  margin: 3em 0;
+  height: 2px;
+  color: #e7e7e731;
+}
