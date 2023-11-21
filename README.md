@@ -1,5 +1,17 @@
-# scrimba-movie-watchlist
+# Movie Watchlist App
 
+A simple movie watchlist application that allows users to search for movies and display relevant information. This project is built using plain JavaScript and uses OMDB API.
+
+## Features
+
+- **Search Movies**: Utilizes the OMDB API to search for movies based on user input.
+- **Display Movie Information**: Shows relevant details such as title, year, genre, and poster for each searched movie.
+
+## Demo
+
+<p align="center">
+  <img src="./ss.gif" />
+</p>
 
 **data.js**
 ```javascript
@@ -13,6 +25,8 @@ export { api };
 ```
 
 # Screenshots
-![ss1](ss1.png)
-![ss2](ss2.png)
-![ss3](ss3.png)
+<p align="center">
+  <img src="./ss1.png" />
+  <img src="./ss2.png" />
+  <img src="./ss3.png" />
+</p>
